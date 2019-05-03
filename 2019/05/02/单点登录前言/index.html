@@ -183,7 +183,7 @@
 <li><strong>单点登录</strong><br>single sing on(简称SSO)<br>多系统，单一位置登录，实现多系统同时登陆的一种技术<br>常出现在互联网应用和企业级平台中<br>如：京东</li>
 </ul>
 <h3 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h3><p>1、登录机制图：</p>
-<img src="/2019/05/02/单点登录前言/1556810090276.drawio.png" title="登录机制图">
+<img src="/2019/05/02/单点登录前言/1556807101988.drawio.png" title="登录机制图">
 <p>正常用户输入密码和用户后，用户session状态变为yes，同时在浏览器中写入cookie，Cookie为用户的唯一标识。<br>下次登录，请求直接带cookie，通过Cookie找到对应的Session，不做特殊配置的话，Cookie名为jessionId，Cookie在服务端唯一。<br><strong>注</strong>：所以平常浏览器清除Cookie之后，很多账号需要重新登录。<br>2、实现单点登录的问题：<br><strong> Cookie不能跨域<br>
 </strong> Session不能共享</p>
 <h3 id="当前解决方案"><a href="#当前解决方案" class="headerlink" title="当前解决方案"></a>当前解决方案</h3><p><strong>同域情况下</strong><br>例子：（一般情况下，一个企业只有一个域名）<br>&nbsp;&nbsp;准备两个应用：app1.a.com， app2.a.com<br>&nbsp;&nbsp;一个单点登录：sso.a.com<br>如图：</p>
